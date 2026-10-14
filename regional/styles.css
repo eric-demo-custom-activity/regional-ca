@@ -1,0 +1,458 @@
+span#select2-ticketDropdownButton_0-container {
+    width: 275px;
+}
+
+span#select2-ticketDropdownButton_1-container {
+    width: 275px;
+}
+
+span#select2-ticketDropdownButton_2-container {
+    width: 275px;
+}
+span#select2-ticketDropdownButton_3-container {
+    width: 275px;
+}
+span#select2-ticketDropdownButton_4-container {
+    width: 275px;
+}
+span#select2-ticketDropdownButton_5-container {
+    width: 275px;
+}
+span#select2-ticketDropdownButton_6-container {
+    width: 275px;
+}
+span#select2-ticketDropdownButton_7-container {
+    width: 275px;
+}
+span#select2-ticketDropdownButton_8-container {
+    width: 275px;
+}
+span#select2-ticketDropdownButton_9-container {
+    width: 275px;
+}
+span#select2-ticketDropdownButton_10-container {
+    width: 275px;
+}
+.select2-container .select2-selection--single {
+    height: 34px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 4px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 34px;
+}
+
+span#select2-ticketDropdownButtonRegional_0-container {
+    width: 245px;
+}
+span#select2-ticketDropdownButtonRegional_1-container {
+    width: 245px;
+}
+span#select2-ticketDropdownButtonRegional_2-container {
+    width: 245px;
+}
+span#select2-ticketDropdownButtonRegional_3-container {
+    width: 245px;
+}
+span#select2-ticketDropdownButtonRegional_4-container {
+    width: 245px;
+}
+span#select2-ticketDropdownButtonRegional_5-container {
+    width: 245px;
+}
+span#select2-ticketDropdownButtonRegional_6-container {
+    width: 245px;
+}
+span#select2-ticketDropdownButtonRegional_7-container {
+    width: 245px;
+}
+span#select2-ticketDropdownButtonRegional_8-container {
+    width: 245px;
+}
+span#select2-ticketDropdownButtonRegional_9-container {
+    width: 245px;
+}
+span#select2-ticketDropdownButtonRegional_10-container {
+    width: 245px;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+}
+
+.search-container input[type='text'] {
+    width: 100%;
+    padding: 6px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-container select {
+    display: none;
+}
+
+.container-border {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.reward-section {
+    position: relative;
+    background-color: whitesmoke;
+}
+
+.reward-section + .reward-section {
+    margin-top: 10px;
+}
+  
+.close-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/* Add CSS to hide and show elements */
+.hidden {
+    display: none;
+}
+
+/* CSS for the search box */
+.search-container {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.search-container input[type='text'] {
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-danger {
+    color: blue;
+    background-color: white;
+    border-color: blue;
+}
+
+button.btn.btn-secondary {
+    padding: 2px 8px;
+    color: blue;
+    background-color: white;
+    border-color: blue;
+}
+
+.create-event-container {
+    text-align: right;
+    margin-top: 20px;
+}
+
+button.btn.btn-primary {
+    margin: 0 -77rem 0 0;
+    background-color: whitesmoke;
+    color: gray;
+    margin-top: 20px;
+}
+
+.flatpickr-months {
+    background-color: green;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+    margin: -6px 0 0 0;
+}
+
+.flatpickr-current-month {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* Border và margin Flatpickr */
+.flatpickr-calendar {
+    border: 1px solid #ccc; /* Đường viền 1px, màu xám nhạt */
+    margin: 10px; /* Khoảng cách 10px */
+    border-radius: 5px; /* Bo tròn viền */
+}
+
+@media (min-width: 1200px) {
+    button.btn.btn-primary {
+        margin-top: 20px;
+        margin-right: -77rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    button.btn.btn-primary {
+        margin-top: 15px;
+        margin-right: -65rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    button.btn.btn-primary {
+        margin-top: 10px;
+        margin-right: -37rem;
+    }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button.disabled {
+    background-color: whitesmoke;
+    color: gray;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+button#createEventBtn {
+    border: 1px solid gray;
+}
+
+.container1 {
+    margin-top: 50px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+    .container1 {
+        width: 1300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1300px;
+    }
+}
+
+@media (min-width: 768px) {
+    .col-sm-2 {
+        width: 13.666667%;
+    }
+}
+
+.checkbox-container {
+    display: inline-block;
+    margin-right: 10px; /* Adjust spacing between checkboxes */
+}
+
+.circular-checkbox {
+    display: none;
+}
+
+.circular-label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #00000096;
+    cursor: pointer;
+    background-color: #ffff;
+}
+
+.circular-checkbox:checked + .circular-label {
+    background-color: #fff;
+}
+
+.circular-checkbox:checked + .circular-label::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border-radius: 50%;
+    margin: 5px auto;
+}
+
+div#quantityError_0 {
+    width: 200px;
+}
+
+div#quantityError_1 {
+    width: 200px;
+}
+div#quantityError_2 {
+    width: 200px;
+}
+div#quantityError_3 {
+    width: 200px;
+}
+div#quantityError_4 {
+    width: 200px;
+}
+div#quantityError_5 {
+    width: 200px;
+}
+div#quantityError_6 {
+    width: 200px;
+}
+div#quantityError_7 {
+    width: 200px;
+}
+div#quantityError_8 {
+    width: 200px;
+}
+div#quantityError_9 {
+    width: 200px;
+}
+
+#ticketFieldsTest_0 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#ticketFieldsTest_1 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#ticketFieldsTest_2 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#ticketFieldsTest_3 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#ticketFieldsTest_4 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#ticketFieldsTest_5 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#ticketFieldsTest_6 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#ticketFieldsTest_7 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#ticketFieldsTest_8 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#ticketFieldsTest_9 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#ticketFieldsTest_10 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+
+#expenseCheckboxes_0 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#expenseCheckboxes_1 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#expenseCheckboxes_2 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#expenseCheckboxes_3 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#expenseCheckboxes_4 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#expenseCheckboxes_5 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#expenseCheckboxes_6 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#expenseCheckboxes_7 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#expenseCheckboxes_8 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#expenseCheckboxes_9 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+#expenseCheckboxes_10 {
+    display: flex;
+    margin-right: 500px;
+    width: 1000px;
+}
+
+.checkbox-group {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.containerRegional {
+    margin-top: 50px;
+}
+
+.containerRegional-border {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+@media (min-width: 1200px) {
+    .containerRegional {
+        width: 1300px;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,14 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Regional Notification Hub</title><style>
+body{font:15px system-ui;margin:0;background:#f4f7fb;color:#182c43}main{max-width:850px;margin:24px auto;background:white;padding:28px;border-radius:16px}h1{font-size:24px}label{display:block;margin:16px 0 5px;font-weight:600}input{box-sizing:border-box;width:100%;padding:10px;border:1px solid #b8c7d7;border-radius:6px}small{color:#50647a}pre{background:#edf2f7;padding:15px;white-space:pre-wrap;overflow-wrap:anywhere}button{padding:10px 18px;border:0;border-radius:6px;background:#1463bf;color:white;margin-top:18px}#error{color:#b42318}#status{color:#435a72}
+</style></head><body><main><h1>Notification Hub · SMS</h1><p>Cấu hình template và field Entry DE. Backend chuyển mỗi lần execute thành một recipient.</p><p id="status">Đang chờ Journey Builder. Ngoài Journey, anh có thể xem thử giao diện.</p>
+<label>Tên activity</label><input id="activityName" value="Regional Notification Hub">
+<label>Template key</label><input id="templateKey" value="lc.promo.spring.sms">
+<label>Correlation ID / Campaign</label><input id="correlationId" value="SF-CAMP-2026Q4">
+<label>Idempotency scope</label><input id="idempotencyScope" value="SF-CAMP-2026Q4-SMS-STEP1-RUN1"><small>Backend thêm Customer ID vào scope. Đổi scope cho đợt gửi mới; giữ nguyên khi retry.</small>
+<label>Event Definition Key</label><input id="eventDefinitionKey" placeholder="Tự lấy từ Journey hoặc nhập thủ công">
+<label>Field số điện thoại</label><input id="phoneField" value="Phone"><small>Giá trị DE phải ở dạng +84900000001, không có **.</small>
+<label>Field Customer ID</label><input id="customerIdField" value="ContactKey">
+<label>Voucher: field DE (để trống nếu dùng giá trị cố định)</label><input id="voucherField" value="Voucher">
+<label>Voucher cố định</label><input id="voucherValue" value="SALE50">
+<button id="preview" type="button">Xem inArguments</button><p id="error" role="alert"></p><pre id="output"></pre>
+<p>Dùng nút Done của Journey Builder để lưu. Secrets và Hub URL cấu hình ở Cloudflare.</p></main><script src="postmonger.js"></script><script src="main.js"></script></body></html>

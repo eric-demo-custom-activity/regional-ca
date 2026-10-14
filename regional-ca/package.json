@@ -1,0 +1,1 @@
+{"name":"regional-ca","version":"2.0.0","private":true,"type":"module","scripts":{"test":"node --test","dev":"wrangler pages dev public","deploy":"wrangler pages deploy public --project-name regional-ca"},"dependencies":{"jose":"^6.1.0"},"devDependencies":{"wrangler":"^4.0.0"}}

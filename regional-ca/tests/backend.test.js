@@ -1,0 +1,22 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {SignJWT} from 'jose';
+import {parsePayload} from '../lib/payload.js';
+import {handle} from '../lib/handler.js';
+const input=JSON.parse(readFileSync(new URL('../examples/sfmc-execute.json',import.meta.url)));
+const batch=JSON.parse(readFileSync(new URL('../examples/hub-payload.json',import.meta.url)));
+const secret='test-signing-secret-only';
+const sign=(body,key=secret) => new SignJWT(body).setProtectedHeader({alg:'HS256'}).setExpirationTime('1h').sign(new TextEncoder().encode(key));
+async function ctx(body=input,env={}) {return {request:new Request('https://regional-ca.pages.dev/execute',{method:'POST',body:await sign(body)}),env:{SFMC_JWT_SECRET:secret,...env}};}
+test('batch preserves exact Hub schema',()=>assert.deepEqual(parsePayload(batch),batch));
+test('Journey singleton and retry-stable key',()=>{const p=parsePayload(input);assert.equal(p.recipients.length,1);assert.equal(p.recipients[0].params.voucher,'SALE50');assert.equal(p.idempotencyKey,parsePayload(input).idempotencyKey);assert.match(p.idempotencyKey,/RUN1:3f2/);});
+test('invalid or unresolved phones rejected',()=>{for(const phone of ['**+84900000001**','0900000001','{{Event.key.Phone}}']) assert.throws(()=>parsePayload({ ...input,inArguments:[{...input.inArguments[0],phone}]}));});
+test('batch requires key',()=>{const {idempotencyKey,...rest}=batch;assert.throws(()=>parsePayload(rest));});
+test('dry run never calls Hub',async()=>{const r=await handle(await ctx(),'execute',()=>{throw Error('must not call');});assert.equal(r.status,200);const b=await r.json();assert.equal(b.sent,false);assert.deepEqual(b.payload,parsePayload(input));});
+test('wrong JWT rejected',async()=>{const c=await ctx();c.env.SFMC_JWT_SECRET='wrong';assert.equal((await handle(c,'execute')).status,401);});
+test('missing secret fails closed',async()=>{const c=await ctx();delete c.env.SFMC_JWT_SECRET;assert.equal((await handle(c,'execute')).status,503);});
+test('expired JWT rejected',async()=>{const c=await ctx();c.request=new Request(c.request.url,{method:'POST',body:await new SignJWT(input).setProtectedHeader({alg:'HS256'}).setExpirationTime(1).sign(new TextEncoder().encode(secret))});assert.equal((await handle(c,'execute')).status,401);});
+test('lifecycle JWT and method',async()=>{assert.equal((await handle(await ctx({}),'validate')).status,200);const c=await ctx();c.request=new Request(c.request.url);assert.equal((await handle(c,'execute')).status,405);});
+test('live forwards parsed payload and headers',async()=>{const r=await handle(await ctx(input,{HUB_MODE:'live',HUB_URL:'https://hub.example/v1/message',HUB_BEARER_TOKEN:'test-token'}),'execute',async(url,options)=>{assert.equal(url,'https://hub.example/v1/message');assert.deepEqual(JSON.parse(options.body),parsePayload(input));assert.equal(options.headers.Authorization,'Bearer test-token');assert.equal(options.headers['Idempotency-Key'],parsePayload(input).idempotencyKey);return new Response('',{status:202});});assert.equal(r.status,200);});
+test('upstream failure must not ACK success',async()=>{const r=await handle(await ctx(input,{HUB_MODE:'live',HUB_URL:'https://hub.example/v1/message'}),'execute',async()=>new Response('secret upstream',{status:500}));assert.equal(r.status,502);assert.doesNotMatch(await r.text(),/secret upstream/);});

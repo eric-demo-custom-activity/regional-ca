@@ -1,0 +1,13 @@
+{
+  "inArguments": [
+    {
+      "source": "salesforce",
+      "templateKey": "lc.promo.spring.sms",
+      "correlationId": "SF-CAMP-2026Q4",
+      "idempotencyScope": "SF-CAMP-2026Q4-SMS-STEP1-RUN1",
+      "customerId": "3f2a7c10-0000-4000-8000-000000000001",
+      "phone": "+84900000001",
+      "voucher": "SALE50"
+    }
+  ]
+}

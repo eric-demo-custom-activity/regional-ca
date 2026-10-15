@@ -1,47 +1,56 @@
 {
   "workflowApiVersion": "1.1",
-  "metaData": {
-    "icon": "icon.png"
-  },
   "type": "REST",
+  "metaData": {
+    "icon": "https://regional-ca.pages.dev/regional/icon.png",
+    "category": "custom"
+  },
   "lang": {
     "en-US": {
-      "description": "Custom Activity"
+      "name": "Regional Notification Hub",
+      "description": "Send notifications through Notification Hub"
     }
   },
   "arguments": {
     "execute": {
-      "url": "https://38ea-101-96-127-81.ngrok-free.app/salesforce/v2/accounts",
+      "url": "https://regional-ca.pages.dev/execute",
       "verb": "POST",
-      "useJwt": true
+      "useJwt": true,
+      "timeout": 10000,
+      "retryCount": 1,
+      "retryDelay": 1000,
+      "concurrentRequests": 10,
+      "inArguments": [],
+      "outArguments": []
     }
   },
   "configurationArguments": {
     "save": {
-      "url": "https://38ea-101-96-127-81.ngrok-free.app/salesforce/v2/accounts",
+      "url": "https://regional-ca.pages.dev/save",
       "verb": "POST",
       "useJwt": true
     },
     "publish": {
-      "url": "https://38ea-101-96-127-81.ngrok-free.app/salesforce/v2/accounts",
+      "url": "https://regional-ca.pages.dev/publish",
       "verb": "POST",
       "useJwt": true
     },
     "validate": {
-      "url": "https://38ea-101-96-127-81.ngrok-free.app/salesforce/v2/accounts",
+      "url": "https://regional-ca.pages.dev/validate",
       "verb": "POST",
       "useJwt": true
     },
     "stop": {
-      "url": "https://38ea-101-96-127-81.ngrok-free.app/salesforce/v2/accounts",
+      "url": "https://regional-ca.pages.dev/stop",
       "verb": "POST",
       "useJwt": true
     }
   },
   "userInterfaces": {
     "configModal": {
-      "height": 200,
-      "width": 300,
+      "url": "https://regional-ca.pages.dev/regional/",
+      "height": 700,
+      "width": 900,
       "fullscreen": true
     }
   },

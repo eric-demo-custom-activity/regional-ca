@@ -2,12 +2,12 @@
   "workflowApiVersion": "1.1",
   "type": "REST",
   "metaData": {
-    "icon": "https://regional-ca.pages.dev/regional/icon.png",
+    "icon": "icon.png",
     "category": "custom"
   },
   "lang": {
     "en-US": {
-      "name": "Regional Notification Hub",
+      "name": "Notification Hub FRT",
       "description": "Send notifications through Notification Hub"
     }
   },

